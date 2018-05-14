@@ -4,5 +4,5 @@ FROM {{cookiecutter.project_slug}}-application
 
 # CHANGE ANYTHING FROM HERE DOWN
 COPY notebooks/requirements-notebook.txt .
-RUN pip install -r notebooks/requirements-notebook.txt
+RUN pip install -r requirements-notebook.txt
 COPY notebooks/ notebooks

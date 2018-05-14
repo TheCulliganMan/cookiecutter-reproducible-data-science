@@ -4,3 +4,6 @@ WORKDIR /usr/src/app
 COPY src/requirements-application.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements-application.txt
+
+# Copy src to /usr/src/app/src
+COPY src .

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  # Application
+  {{cookiecutter.project_slug}}-application:
+    restart: always
+    image: {{cookiecutter.project_slug}}-application
+    volumes:
+      - ./:/usr/src/app
+    env_file:
+      - config/environment
+      - config/secrets
+    command: bash # Change as you see fit
+  # Notebook
+  {{cookiecutter.project_slug}}-notebook:
+    restart: always
+    image: {{cookiecutter.project_slug}}-notebook
+    volumes:
+      - ./:/usr/src/app
+    env_file:
+      - config/environment
+      - config/secrets
+    ports:
+      - {{cookiecutter.jupyter_port}}:8989
+    command: jupyter lab --port=8989 --ip=0.0.0.0 --allow-root "jupyter" --NotebookApp.password="sha1:f217aa434731:b01a46c5ffccfc413ccffc33c802882737ac2ccd"

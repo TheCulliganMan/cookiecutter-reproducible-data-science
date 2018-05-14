@@ -3,9 +3,10 @@
     "email": "rrculligan@gmail.com",
     "github_username": "TheCulliganMan",
     "project_name": "Name of your data science project",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
     "project_short_description": "A short description of your project",
     "release_date": "{% now 'local' %}",
+    "jupyter_port": "8888"
     "version": "0.1.0",
     "_extensions": ["jinja2_time.TimeExtension"]
 }

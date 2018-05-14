@@ -15,11 +15,15 @@ To start a new science project:
 
 Follow the instructions to get your directory set up. Then enter the directory.
 
+First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values.
+
 Build the application `bash bin/build-scripts/build-app-dockerfile.sh`.
 
 Build the notebooks if you want them `bash bin/build-scripts/build-notebook-dockerfile.sh`.
 
 Otherwise build all `bash bin/build-scripts/build-all.sh`.
+
+After projects are built, feel free to use the docker-compose files.  There are three, one to start just the application (which defaults to `bash`), another that starts just the notebook with a shared volume mount the projecrt root.  
 
 Project Structure
 -----------------

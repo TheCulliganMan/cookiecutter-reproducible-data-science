@@ -1,0 +1,18 @@
+version: '3'
+services:
+  {{cookiecutter.project_slug}}-application:
+    restart: always
+    image: {{cookiecutter.project_slug}}-application
+    volumes:
+      # Config Directory
+      - ./config:/usr/src/app/config
+      # Data Directory
+      - ./data:/usr/src/app/data
+      # Reports Directory
+      - ./reports:/usr/src/app/reports
+      # Bin Script Directory
+      - ./bin:/usr/src/app/bin
+    env_file:
+      - config/environment
+      - config/secrets
+    command: bash

@@ -13,6 +13,14 @@ To start a new science project:
 
 `cookiecutter gh:TheCulliganMan/cookiecutter-reproducible-data-science`
 
+Follow the instructions to get your directory set up. Then enter the directory.
+
+Build the application `bash bin/build-scripts/build-app-dockerfile.sh`.
+
+Build the notebooks if you want them `bash bin/build-scripts/build-notebook-dockerfile.sh`.
+
+Otherwise build all `bash bin/build-scripts/build-all.sh`.
+
 Project Structure
 -----------------
 

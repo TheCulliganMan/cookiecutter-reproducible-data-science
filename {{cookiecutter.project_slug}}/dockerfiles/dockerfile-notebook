@@ -1,0 +1,2 @@
+FROM {{cookiecutter.project_slug}}_application
+RUN echo "bar" > /baz

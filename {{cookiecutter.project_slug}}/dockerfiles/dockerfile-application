@@ -1,0 +1,4 @@
+FROM python:3.6.4
+RUN mkdir -p /usr/src/app
+COPY requirements-application.txt .
+RUN pip install -r requirements-application.txt

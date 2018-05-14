@@ -21,4 +21,4 @@ services:
       - config/secrets
     ports:
       - {{cookiecutter.jupyter_port}}:8989
-    command: jupyter lab --port=8989 --ip=0.0.0.0 --allow-root "jupyter" --NotebookApp.password="sha1:f217aa434731:b01a46c5ffccfc413ccffc33c802882737ac2ccd"
+    command: jupyter lab --port=8989 --ip=0.0.0.0 --allow-root --NotebookApp.password="sha1:f217aa434731:b01a46c5ffccfc413ccffc33c802882737ac2ccd"

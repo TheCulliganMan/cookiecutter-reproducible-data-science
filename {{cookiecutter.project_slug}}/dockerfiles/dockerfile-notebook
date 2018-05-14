@@ -1,2 +1,4 @@
 FROM {{cookiecutter.project_slug}}_application
+COPY notebooks/requirements-notebook.txt .
 RUN pip install -r notebooks/requirements-notebook.txt
+COPY notebooks/ notebooks

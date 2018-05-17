@@ -5,5 +5,8 @@ COPY src/requirements-application.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements-application.txt
 
-# Copy src to /usr/src/app/src
+# Copy static attrs (non dev) to /usr/src/app
 COPY src .
+COPY bin .
+COPY tests .
+COPY scripts .

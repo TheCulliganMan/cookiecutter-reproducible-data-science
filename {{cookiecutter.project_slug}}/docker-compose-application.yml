@@ -10,8 +10,8 @@ services:
       - ./data:/usr/src/app/data
       # Reports Directory
       - ./reports:/usr/src/app/reports
-      # Bin Script Directory
-      - ./bin:/usr/src/app/bin
+      # Script Directory
+      - ./scripts:/usr/src/app/scripts
     env_file:
       - config/environment
       - config/secrets

@@ -3,14 +3,20 @@
 
 {{cookiecutter.project_short_description}}
 
-Building
---------
+Usage
+-----
+1. To start a new science project: `cookiecutter gh:TheCulliganMan/cookiecutter-reproducible-data-science`  Follow cookiecutter's instructions to get your project set up. Then enter the directory.
 
-1. Always `mv config/secrets_example config/secrets` first!
+2. First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values for the project.  Docker-compose won't work without this.
 
-2. Then you should `./scripts/build-scripts/build-all.sh`  This will build the docker images for your compose files *This will only work from the project root!!!*.
+3. Build the application and the notebook `./scripts/build-scripts/build-all.sh`.
 
-3. After that, the docker-compose files will be enabled.  Make sure you are updating the correct dockerfiles, if you only need it in the notebook add the requrement to the notebook dockerfile or requirements file.  If you need it in the application, add it to the application requirements file, this will be inherited on to the notebook.  After you change  the dockerfile or requirements file, run the build script.
+4. After projects are built, use the run scripts `./scripts/run-scripts/run-notebook.sh` or `./scripts/run-scripts/run-development.sh` (to run app and notebook concurrently) or `./scripts/run-scripts/run-application.sh` (to run a prod app without volume mounts).
+
+5. Tests can be created at `./tests`. To run them `./scripts/test-scripts/run-tests.sh`.
+
+
+This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.
 
 Happy Programming!
 
@@ -34,9 +40,10 @@ Project Structure
 ├── notebooks          <- Jupyter notebooks
 ├── reports            <- For a manuscript source, e.g., LaTeX, Markdown, etc., or any project reports
 │   └── figures        <- Figures for the manuscript or reports
-├── scripts
+├── scripts (Should run start ==> finish with no human intervention, anybody should be able to run these with little to no training.)
 │   ├── build-scripts  <- build scripts for the applications
-│   └── run-scripts    <- run scripts for the applications
+│   ├── run-scripts    <- run scripts for the applications 
+│   └── test-scripts   <- test scripts for the applications
 └── src                <- Source code for this project
     ├── data           <- scripts and programs to process data
     ├── external       <- Any external source code, e.g., pull other git projects, or external libraries

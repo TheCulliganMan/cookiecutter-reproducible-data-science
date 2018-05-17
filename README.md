@@ -1,5 +1,5 @@
-Reproducible Science
-====================
+Dockerized Reproducible Data Science
+====================================
 
 A boilerplate for reproducible and transparent science with close resemblances to the philosophy of [Cookiecutter Data Science](https://github.com/drivendata/cookiecutter-data-science): *A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.*
 
@@ -9,21 +9,19 @@ Install `cookiecutter` command line: `pip install cookiecutter`
 
 Usage
 -----
-To start a new science project:
+1. To start a new science project: `cookiecutter gh:TheCulliganMan/cookiecutter-reproducible-data-science`  Follow cookiecutter's instructions to get your project set up. Then enter the directory.
 
-`cookiecutter gh:TheCulliganMan/cookiecutter-reproducible-data-science`
+2. First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values for the project.  Docker-compose won't work without this.
 
-Follow the instructions to get your directory set up. Then enter the directory.
+3. Build the application and the notebook `./scripts/build-scripts/build-all.sh`.
 
-First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values.
+4. After projects are built, use the run scripts `./scripts/run-scripts/run-notebook.sh` or `./scripts/run-scripts/run-development.sh` (to run app and notebook concurrently) or `./scripts/run-scripts/run-application.sh` (to run a prod app without volume mounts).
 
-Build the application `bash scripts/build-scripts/build-app-dockerfile.sh`.
+5. Tests can be created at `./tests`. To run them `./scripts/test-scripts/run-tests.sh`.
 
-Build the notebooks if you want them `bash scripts/build-scripts/build-notebook-dockerfile.sh`.
+This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.
 
-Otherwise build all `bash scripts/build-scripts/build-all.sh`.
-
-After projects are built, feel free to use the docker-compose files.  There are three, one to start just the application (which defaults to `bash`), another that starts just the notebook with a shared volume mount the projecrt root.  
+Happy Programming!
 
 Project Structure
 -----------------
@@ -45,9 +43,10 @@ Project Structure
 ├── notebooks          <- Jupyter notebooks
 ├── reports            <- For a manuscript source, e.g., LaTeX, Markdown, etc., or any project reports
 │   └── figures        <- Figures for the manuscript or reports
-├── scripts            <- Runtime Scripts (always run from the project root)
+├── scripts (Should run start ==> finish with no human intervention, anybody should be able to run these with little to no training.)
 │   ├── build-scripts  <- build scripts for the applications
-│   └── run-scripts    <- run scripts for the applications
+│   ├── run-scripts    <- run scripts for the applications 
+│   └── test-scripts   <- test scripts for the applications
 └── src                <- Source code for this project
     ├── data           <- scripts and programs to process data
     ├── external       <- Any external source code, e.g., pull other git projects, or external libraries

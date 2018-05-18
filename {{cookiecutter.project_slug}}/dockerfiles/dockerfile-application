@@ -1,5 +1,6 @@
 FROM python:3.6.4
 RUN mkdir -p /usr/src/app
+ENV PYTHONPATH=$PYTHONPATH:/usr/src/app
 WORKDIR /usr/src/app
 COPY src/requirements-application.txt .
 RUN pip install --upgrade pip

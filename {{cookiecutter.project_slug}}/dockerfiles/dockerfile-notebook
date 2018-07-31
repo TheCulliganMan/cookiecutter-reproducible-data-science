@@ -5,5 +5,6 @@ FROM {{cookiecutter.project_slug}}-application
 # CHANGE ANYTHING FROM HERE DOWN
 COPY notebooks/requirements-notebook.txt .
 RUN pip install -r requirements-notebook.txt
+RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
 COPY notebooks/ notebooks

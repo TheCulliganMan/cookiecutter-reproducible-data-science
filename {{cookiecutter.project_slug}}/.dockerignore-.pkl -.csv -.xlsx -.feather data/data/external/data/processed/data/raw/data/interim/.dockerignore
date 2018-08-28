@@ -1,9 +1,0 @@
-*.pkl
-*.csv
-*.xlsx
-*.feather
-data/*
-data/external/*
-data/processed/*
-data/raw/*
-data/interim/*

@@ -11,5 +11,4 @@ RUN pip install -r requirements-application.txt
 # Copy static attrs (non dev) to /usr/src/app
 COPY src/ src/
 COPY bin/ bin/
-COPY tests/ tests/
 COPY scripts/ scripts/

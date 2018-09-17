@@ -19,7 +19,7 @@ Usage
 
 5. Tests can be created at `./tests`. To run them `./scripts/test-scripts/run-tests.sh`.
 
-This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.
+This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.  For best resuts use with https://github.com/kynan/nbstripout.  This tool helps avoid merge conflict with jupyer notebooks.
 
 Happy Programming!
 

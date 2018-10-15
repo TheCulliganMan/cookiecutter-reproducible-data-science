@@ -1,33 +1,34 @@
-{{cookiecutter.project_slug}}
-==============================
+# {{cookiecutter.project_name}}
+====================================
 
-{{cookiecutter.project_short_description}}
+A boilerplate for reproducible and transparent science with close resemblances to the philosophy of [Cookiecutter Data Science](https://github.com/drivendata/cookiecutter-data-science): *A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.*
 
-Usage
------
-1. To start a new science project: `cookiecutter gh:TheCulliganMan/cookiecutter-reproducible-data-science`  Follow cookiecutter's instructions to get your project set up. Then enter the directory.
+## Requirements
 
-2. First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values for the project.  Docker-compose won't work without this.
+* Install `make` with `apt-get install build-essential` or `yum install make`
 
-3. Build the application and the notebook `./scripts/build-scripts/build-all.sh`.
+## Usage
 
-4. After projects are built, use the run scripts `./scripts/run-scripts/run-notebook.sh` or `./scripts/run-scripts/run-development.sh` (to run app and notebook concurrently) or `./scripts/run-scripts/run-application.sh` (to run a prod app without volume mounts).
+1. First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values for the project.  Docker-compose won't work without this.
 
-5. Tests can be created at `./tests`. To run them `./scripts/test-scripts/run-tests.sh`.
+2. Build the application and the notebook `./scripts/build-scripts/build-all.sh`.
 
+3. After projects are built, use the run scripts `make build-run-notebook` or `make build-run-development` (to run app and notebook concurrently) or make build-run-app` (to run a prod app without volume mounts).
 
-This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.
+4. Tests can be created at `./tests`. To run them `./scripts/test-scripts/run-tests.sh`.
+
+This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.  For best resuts use with https://github.com/kynan/nbstripout.  This tool helps avoid merge conflict with jupyer notebooks.
 
 Happy Programming!
 
-Project Structure
------------------
+## Project Structure
 
-```
+```plaintext
 .
 ├── AUTHORS.md
 ├── LICENSE
 ├── README.md
+├── Makefile           <- change this to change how you run your app
 ├── bin                <- compiled code
 ├── config             <- Configuration files, e.g., for doxygen or for your model if needed
 ├── dockerfiles        <- docker files
@@ -51,3 +52,7 @@ Project Structure
     ├── tools          <- Any helper scripts go here
     └── visualization  <- Scripts for visualisation of your results, e.g., matplotlib, ggplot2 related.
 ```
+
+## License
+
+This project is licensed under the terms of the [BSD License](/LICENSE)

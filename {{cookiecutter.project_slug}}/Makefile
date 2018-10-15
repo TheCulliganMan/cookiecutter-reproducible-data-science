@@ -19,6 +19,14 @@ build-run-development:
 build-run-tests:
 		bash scripts/test-scripts/run-tests.sh
 
+stop-notebook:
+		docker-compose -f docker-compose-notebook.yml down
+
+stop-application:
+		docker-compose -f docker-compose-application.yml down
+
+stop-development:
+		docker-compose -f docker-compose-development.yml down
 
 
 

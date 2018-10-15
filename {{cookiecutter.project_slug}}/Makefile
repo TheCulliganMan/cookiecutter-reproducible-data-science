@@ -7,16 +7,16 @@ build-app:
 build-development:
 		bash scripts/build-scripts/build-all.sh
 
-build-run-notebook:
+run-notebook:
 		bash scripts/run-scripts/run-notebook.sh
 
-build-run-app:
+run-app:
 		bash scripts/run-scripts/run-application.sh
 
-build-run-development:
+run-development:
 		bash scripts/run-scripts/run-development.sh
 
-build-run-tests:
+run-tests:
 		bash scripts/test-scripts/run-tests.sh
 
 stop-notebook:

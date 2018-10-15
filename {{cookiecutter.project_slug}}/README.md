@@ -11,11 +11,11 @@ A boilerplate for reproducible and transparent science with close resemblances t
 
 1. First thing you should probably do is `mv config/secrets_example config/secrets` and set the proper values for the project.  Docker-compose won't work without this.
 
-2. Build the application and the notebook `./scripts/build-scripts/build-all.sh`.
+2. Build the application and the notebook `make build-all`.
 
-3. After projects are built, use the run scripts `make build-run-notebook` or `make build-run-development` (to run app and notebook concurrently) or make build-run-app` (to run a prod app without volume mounts).
+3. After projects are built, use the run scripts `make run-notebook`, `make run-app`, or `make run-development`.
 
-4. Tests can be created at `./tests`. To run them `./scripts/test-scripts/run-tests.sh`.
+4. Tests can be created at `./tests`. To run them `make run-tests`.
 
 This template isn't meant to constrain the developer or data scientist, just make reproducable code easier to write.  Please make sure that your run scripts and test scripts are self contained.  Running the application should be as easy as hitting the enter button.  This makes maintainence much easier and more enjoyable for all parties.  For best resuts use with https://github.com/kynan/nbstripout.  This tool helps avoid merge conflict with jupyer notebooks.
 

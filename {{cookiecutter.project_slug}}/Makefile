@@ -7,6 +7,9 @@ build-app:
 build-development:
 		bash scripts/build-scripts/build-all.sh
 
+build-all:
+		bash scripts/build-scripts/build-all.sh
+
 run-notebook:
 		bash scripts/run-scripts/run-notebook.sh
 

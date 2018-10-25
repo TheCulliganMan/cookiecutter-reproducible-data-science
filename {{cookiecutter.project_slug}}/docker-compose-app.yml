@@ -1,8 +1,8 @@
 version: '3'
 services:
-  {{cookiecutter.project_slug}}-application:
+  {{cookiecutter.project_slug}}-app:
     restart: always
-    image: {{cookiecutter.project_slug}}-application
+    image: {{cookiecutter.project_slug}}-app
     volumes:
       # Config Directory
       - ./config:/usr/src/app/config

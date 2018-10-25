@@ -1,6 +1,6 @@
 # DO NOT TOUCH
 # (Unless you want to debug a bit)
-FROM {{cookiecutter.project_slug}}-application
+FROM {{cookiecutter.project_slug}}-app
 
 # CHANGE ANYTHING FROM HERE DOWN
 COPY notebooks/requirements-notebook.txt .

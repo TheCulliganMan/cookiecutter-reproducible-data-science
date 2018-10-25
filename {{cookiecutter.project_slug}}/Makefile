@@ -14,7 +14,7 @@ run-notebook:
 		bash scripts/run-scripts/run-notebook.sh
 
 run-app:
-		bash scripts/run-scripts/run-application.sh
+		bash scripts/run-scripts/run-app.sh
 
 run-development:
 		bash scripts/run-scripts/run-development.sh
@@ -25,8 +25,8 @@ run-tests:
 stop-notebook:
 		docker-compose -f docker-compose-notebook.yml down
 
-stop-application:
-		docker-compose -f docker-compose-application.yml down
+stop-app:
+		docker-compose -f docker-compose-app.yml down
 
 stop-development:
 		docker-compose -f docker-compose-development.yml down

@@ -1,9 +1,9 @@
 version: '3'
 services:
   # Application
-  {{cookiecutter.project_slug}}-application:
+  {{cookiecutter.project_slug}}-app:
     restart: always
-    image: {{cookiecutter.project_slug}}-application
+    image: {{cookiecutter.project_slug}}-app
     volumes:
       - ./:/usr/src/app
     env_file:

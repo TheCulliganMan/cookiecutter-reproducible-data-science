@@ -4,9 +4,9 @@ ENV PYTHONPATH=$PYTHONPATH:/usr/src/app
 ENV PYTHONPATH=/usr/src/app/src:$PYTHONPATH
 ENV PYTHONUNBUFFERED=1
 WORKDIR /usr/src/app
-COPY src/requirements-application.txt .
+COPY src/requirements-app.txt .
 RUN pip install --upgrade pip
-RUN pip install -r requirements-application.txt
+RUN pip install -r requirements-app.txt
 
 # Copy static attrs (non dev) to /usr/src/app
 COPY src/ src/

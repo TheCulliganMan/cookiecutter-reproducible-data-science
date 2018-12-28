@@ -1,5 +1,5 @@
 build-notebook:
-		bash scripts/build-noteboook-dockerfile.sh
+		bash scripts/build-scripts/build-notebook-dockerfile.sh
 
 build-app:
 		bash scripts/build-scripts/build-app-dockerfile.sh
